@@ -1,8 +1,12 @@
-def hello_world():
+from bottle import route, run
+
+@route('/')
+def hello():
     return "Hello, World!"
 
-def main():
-    print(hello_world())
-
 if (__name__ == "__main__"):
-    main()
+    run(
+        host='localhost',
+        port=8080,
+        debug=True
+    )
